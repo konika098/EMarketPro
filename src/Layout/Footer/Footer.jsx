@@ -45,11 +45,11 @@ const Footer = () => {
                         <h1 className="text-white text-xl font-medium tracking-[0.030rem]"> Join Our Newsletter </h1> <br />
                         <p className="text-white w-3/5 leading-7 mb-5 md:w-3/4"> Join & get important new regularly</p>
                          <input type="email" placeholder="Enter E-mail Here" className="py-1 px-2 placeholder-gray-400 rounded-tl-xl focus: outline-none focus:border border-orange-600 md:w-1/2 lg:w-3/5" />
-                        <button className="text-white bg-orange-400 p-1 -translate-x-1 rounded-br-xl hover:bg-orange-500"> Subscribe
+                        <button className="text-black bg-[#bef264] p-1 -translate-x-1 rounded-br-xl hover:bg-orange-500"> Subscribe
                         </button>
                     </div>
                 </div>
-                <div className="bg-blue-900 p-3 flex flex-col text-center pt-5 space-y-8 md:flex-row md:justify-between md:space-y-0">
+                <div className="bg-[#244034] p-3 flex flex-col text-center pt-5 space-y-8 md:flex-row md:justify-between md:space-y-0">
                     <div className="flex mx-3 justify-between space-x-20 md:flex-row text-gray-200 md:space-x-28 md:ml-20 lg:ml-24 lg:space-x-[13rem] xl:space-x-72 xl:ml-24">
                         <p>@ Copyright <strong>Company.</strong>All Rights Reserved</p>
                         <p>Designed by <span className="text-white">Konika Khan</span></p>

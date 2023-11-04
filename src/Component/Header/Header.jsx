@@ -18,6 +18,7 @@ const Header = () => {
               <NavLink to="/mypost" className="hover:text-[#d9f99d] text-semibold text-xl py-2 rounded-lg px-2 md:px-5">My Posted Jobs</NavLink>
               <NavLink to="/mybid" className=" hover:text-[#d9f99d]text-semibold text-xl py-2 rounded-lg px-2 md:px-5">My Bids</NavLink>
               <NavLink to="/bidreq" className=" hover:text-[#d9f99d] text-semibold text-xl py-2 rounded-lg px-2 md:px-5">Bid Requests</NavLink>
+              <NavLink to="/contactme" className=" hover:text-[#d9f99d] text-semibold text-xl py-2 rounded-lg px-2 md:px-5">Contact</NavLink>
             </ul>
           </div>
 
@@ -29,6 +30,8 @@ const Header = () => {
             <NavLink to="/mypost" className="text-semibold hover:text-[#d9f99d] text-xl py-2 rounded-lg px-2 md:px-5">My Posted Jobs</NavLink>
             <NavLink to="/mybid" className="text-semibold hover:text-[#d9f99d] text-xl py-2 rounded-lg px-2 md:px-5">My Bids</NavLink>
             <NavLink to="/bidreq" className="text-semibold hover:text-[#d9f99d] text-xl py-2 rounded-lg px-2 md:px-5">Bid Requests</NavLink>
+            <NavLink to="/contactme" className=" hover:text-[#d9f99d] text-semibold text-xl py-2 rounded-lg px-2 md:px-5">Contact</NavLink>
+
           </ul>
         </div>
         <div className="mt-3 ml-10 flex gap-4">

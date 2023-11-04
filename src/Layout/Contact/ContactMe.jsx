@@ -1,8 +1,33 @@
-import React from 'react';
+import { RiPhoneFill,RiQuestionAnswerLine} from "react-icons/ri";
+import { ImLocation2 } from "react-icons/im";
 
 const ContactMe = () => {
     return (
         <>
+       
+       <div className="mt-10" >
+          <h1 className="text-5xl text-center">Get in touch</h1>
+         <div className="flex  justify-center mt-10 gap-10">
+         <div className="flex flex-col items-center">
+            <ImLocation2 className="bg-[#bef264] text-black w-16 h-16 rounded-full p-4"></ImLocation2>
+            <h1 className="text-xl mt-2 font-semibold ">Our Address</h1>
+            <p className="mt-2 text-base">GULSHAN-1, A-BLOCK ,<br />DHAKA-1216 ,BANGLADESH</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <RiPhoneFill  className="bg-[#bef264] text-black w-16 h-16 rounded-full p-4" ></RiPhoneFill>
+            <h1 className="text-xl mt-2 font-semibold ">Contact Info</h1>
+            <p className="mt-2 text-base">+91 7008090111</p>
+            <p className="mt-1 text-base">info@email.com</p>
+            
+          </div>
+          <div className="flex flex-col items-center">
+            <RiQuestionAnswerLine  className="bg-[#bef264] text-black w-16 h-16 rounded-full p-4"></RiQuestionAnswerLine>
+            <h1 className="text-xl mt-2 font-semibold ">Live Support</h1>
+            <p className="mt-2 text-base"> live chat service</p>
+            <p className="mt-1 text-base">www.e-marketpro.com</p>
+          </div>
+         </div>
+        </div>
 <section className="text-gray-600 body-font relative">
   <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
     <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
@@ -35,11 +60,12 @@ const ContactMe = () => {
         <label htmlFor="message" className="leading-7 text-sm text-gray-600">Message</label>
         <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" defaultValue={""} />
       </div>
-      <button className="text-white bg-fuchsia-700 border-0 py-2 px-6 focus:outline-none hover:bg-fuchsia-600 rounded text-lg">Button</button>
+      <button className="bg-[#bef264] text-black p-2   rounded text-lg">Send Message</button>
     </div>
   </div>
 </section>
 
+      
 
 
         </>
