@@ -3,8 +3,8 @@ import 'react-tabs/style/react-tabs.css';
 const Tablayout = () => {
     return (
        <>
-     <div>
-     <h1 className='text-4xl font-semibold mb-10 text-center mt-14'>Let's Brows All <span className='text-fuchsia-700'>Category</span></h1>
+     <div className=''>
+     <h1 className='text-4xl text-[#244034] font-semibold mb-10 text-center mt-14'>Most Demanding <span className='text-[#4d7c0f]'>Categories</span> </h1>
     <div className='flex justify-center '>
       <img className='w-[450px] mr-20' src="https://i.ibb.co/X2X6vC4/alison-courseware-intro-4164.jpg" alt="" />
     <Tabs >

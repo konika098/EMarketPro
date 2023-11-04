@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
             <div>
-                <div className="bg-gradient-to-r from-blue-900 to-fuchsia-700 p-3 space-y-10 md:grid grid-cols-2 md:-mt-6 lg:grid-cols-4">
+                <div className="bg-[#244034] p-3 space-y-10 md:grid grid-cols-2 md:-mt-6 lg:grid-cols-4">
                     <div className="w-1/2 md:ml-24 md:mt-9 md:w-3/4">
                         <h1 className="text-white text-xl font-medium">Company</h1> <br />
                         <p className="text-white text-base hover:text-yellow-300 cursor-none"> GULSHAN-1, A-BLOCK  <br />DHAKA-1216  <br /> BANGLADESH </p> <br />
@@ -31,19 +31,20 @@ const Footer = () => {
                         <h1 className="text-white text-xl font-medium tracking-[0.030rem]"> Our Services </h1>
                         <ul className="mt-2 text-white">
                             
-                            <li> <i className="fa fa-chevron-right text-orange-400" /> <a href="#" className="hover:text-yellow-300"> Web
-                                Development</a> </li>
+                            <li> <i className="fa fa-chevron-right text-orange-400" /> <a href="#" className="hover:text-yellow-300">Browes Jobs</a> </li>
                             
                             <li> <i className="fa fa-chevron-right text-orange-400" /> <a href="#" className="hover:text-yellow-300">
-                               Digital Marketing</a> </li>
+                               Pricing</a> </li>
                             <li> <i className="fa fa-chevron-right text-orange-400" /> <a href="#" className="hover:text-yellow-300">
-                                Graphic Design</a> </li>
+                               Companies</a> </li>
+                            <li> <i className="fa fa-chevron-right text-orange-400" /> <a href="#" className="hover:text-yellow-300">
+                                Candidates</a> </li>
                         </ul>
                     </div>
                     <div className="md:order-2 lg:order-last">
                         <h1 className="text-white text-xl font-medium tracking-[0.030rem]"> Join Our Newsletter </h1> <br />
-                        <p className="text-white w-3/5 leading-7 mb-5 md:w-3/4"> Join 25,000+ others and never miss out on new
-                            tips,course, and more. </p> <input type="email" placeholder="Enter E-mail Here" className="py-1 px-2 placeholder-gray-400 rounded-tl-xl focus: outline-none focus:border border-orange-600 md:w-1/2 lg:w-3/5" />
+                        <p className="text-white w-3/5 leading-7 mb-5 md:w-3/4"> Join & get important new regularly</p>
+                         <input type="email" placeholder="Enter E-mail Here" className="py-1 px-2 placeholder-gray-400 rounded-tl-xl focus: outline-none focus:border border-orange-600 md:w-1/2 lg:w-3/5" />
                         <button className="text-white bg-orange-400 p-1 -translate-x-1 rounded-br-xl hover:bg-orange-500"> Subscribe
                         </button>
                     </div>
