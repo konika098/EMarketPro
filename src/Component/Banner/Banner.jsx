@@ -29,9 +29,9 @@ const Banner = () => {
   </div>
    
    </div>
-   <div className= "absolute bottom-1  right-0">
+   {/* <div className= "absolute bottom-1  right-0">
        <img className="w-[800px] " src="https://i.ibb.co/KDnqS8V/pexels-photo-3768126-removebg-preview.png" alt="" />
-     </div>
+     </div> */}
  </div> 
  
 </div>
