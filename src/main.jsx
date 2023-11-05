@@ -17,6 +17,8 @@ import MyBid from './Layout/MyBid/MyBid';
 import BidReq from './Layout/BidReq/BidReq';
 import ContactMe from './Layout/Contact/ContactMe';
 import AuthProvider from './Component/ProviderFile/AuthProvider';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute'
+import Job from './Component/JobInfo/Job'
 
 
 const router = createBrowserRouter([
@@ -31,19 +33,19 @@ const router = createBrowserRouter([
       },
       {
         path:"/addjob",
-        element:<AddJobs/>
+        element:<PrivateRoute><AddJobs/></PrivateRoute>
       },
       {
         path:"/mypost",
-        element:<MyPost/>
+        element:<PrivateRoute><MyPost/></PrivateRoute>
       },
       {
         path:'/mybid',
-        element:<MyBid/>
+        element:<PrivateRoute><MyBid/></PrivateRoute>
       },
       {
         path:'/bidreq',
-        element:<BidReq/>
+        element:<PrivateRoute><BidReq/></PrivateRoute>
       },
       
       {
@@ -57,6 +59,11 @@ const router = createBrowserRouter([
      {
       path:"/contactme",
       element:<ContactMe/>
+     },
+     {
+      path:'/job',
+      element:<Job/>,
+      // loader:({params})=>fetch(`http://localhost:5000/PostJob${params.name}`)
      }
     ]
   },
