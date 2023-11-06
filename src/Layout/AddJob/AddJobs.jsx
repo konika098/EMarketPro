@@ -48,7 +48,7 @@ const AddJobs = () => {
             <div className="flex  items-center justify-center gap-10 ">
                 <img className="w-[700px] h-[400px]" src="https://i.ibb.co/3WmRj2w/indeed-Hub-illustrations-03.png" alt="" />
 
-                <div className="mt-4 flex flex-col bg-[#d9f99d]  w-[470px] rounded-lg p-4 shadow-sm">
+                <div className="mt-4 flex flex-col bg-[#ecfccb]  w-[470px] rounded-lg p-4 shadow-sm">
                     <h2 className="text-[#244034] text-center font-bold text-xl">Add Job Here</h2>
 
                     <form onSubmit={handleAddJob} className='flex  flex-col justify-center mx-auto' >

@@ -1,9 +1,11 @@
 import React from 'react';
+import MyBidDetails from './MyBidDetails';
 
 const MyBid = () => {
     return (
        <>
-       <h1>my bid</h1>
+      
+       <MyBidDetails/>
        </>
     );
 };
