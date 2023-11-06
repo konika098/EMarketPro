@@ -61,9 +61,9 @@ const router = createBrowserRouter([
       element:<ContactMe/>
      },
      {
-      path:'/job',
+      path:'/job/:id',
       element:<Job/>,
-      // loader:({params})=>fetch(`http://localhost:5000/PostJob${params.name}`)
+      loader:({params})=>fetch(`http://localhost:5000/PostJob/${params.id}`)
      }
     ]
   },

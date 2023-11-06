@@ -4,6 +4,7 @@ import { IoBagHandle, IoCodeSlashOutline } from "react-icons/io5";
 import { GoPencil } from "react-icons/go";
 
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 const Tablayout = () => {
   const [data, setData] = useState([])
 
@@ -39,26 +40,26 @@ const Tablayout = () => {
             <TabPanel>
               <div className='grid grid-cols-2 mt-4'>
                 {webDevelop.map((job, index) => (
+                  
 
                   <div key={index} className="p-4  lg:w-[80%]">
 
-                    <div className="h-full bg-[#7ab128] bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-                      <IoCodeSlashOutline></IoCodeSlashOutline>
-                      <h2 className="tracking-widest text-xs title-font font-medium text-white mb-1">{job.Title}</h2>
-                      <p className="leading-relaxed text-white mb-3">{job.Description}</p>
-                      <div className='flex gap-4'>
-                        <h1 className="title-font  font-medium text-white mb-3">Deadline: {job.Deadline}</h1>
-                        <h1 className="title-font  font-medium text-white mb-3">Offer Price: {job.MinimumPrice}</h1>
-                      </div>
-                      <a className="text-white inline-flex items-center">Bid Now
-                        <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14" />
-                          <path d="M12 5l7 7-7 7" />
-                        </svg>
-                      </a>
+                  <div className="h-full bg-[#7ab128] bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                    <IoCodeSlashOutline></IoCodeSlashOutline>
+                    <h2 className="tracking-widest text-xs title-font font-medium text-white mb-1">{job.Title}</h2>
+                    <p className="leading-relaxed text-white mb-3">{job.Description}</p>
+                    <div className='flex gap-4'>
+                      <h1 className="title-font  font-medium text-white mb-3">Deadline: {job.Deadline}</h1>
+                      <h1 className="title-font  font-medium text-white mb-3">Offer Price: {job.MinimumPrice}</h1>
                     </div>
+                    <Link to={`/job/${job?._id}`} className="text-white inline-flex items-center">Bid Now
+                      <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14" />
+                        <path d="M12 5l7 7-7 7" />
+                      </svg>
+                    </Link>
                   </div>
-
+                </div>
                 ))}
               </div>
             </TabPanel>
@@ -75,12 +76,12 @@ const Tablayout = () => {
                       <div className='flex gap-4'>
                         <h1 className="title-font sm:text-2xl text-xl font-medium text-white mb-3">Deadline: {job.Deadline}</h1>
                       </div>
-                      <a className="text-[#bef264] inline-flex items-center">Bid Now
+                      <Link to={`/job/${job?._id}`} className="text-[#bef264] inline-flex items-center">Bid Now
                         <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M5 12h14" />
                           <path d="M12 5l7 7-7 7" />
                         </svg>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -98,12 +99,12 @@ const Tablayout = () => {
                       <div className='flex gap-4'>
                         <h1 className="title-font sm:text-2xl text-xl font-medium text-white mb-3">Deadline: {job.Deadline}</h1>
                       </div>
-                      <a className="text-[#bef264] inline-flex items-center">Bid Now
+                      <Link to={`/job/${job?._id}`} className="text-[#bef264] inline-flex items-center">Bid Now
                         <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M5 12h14" />
                           <path d="M12 5l7 7-7 7" />
                         </svg>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}
