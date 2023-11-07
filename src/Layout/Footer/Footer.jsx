@@ -55,16 +55,16 @@ const Footer = () => {
                         <p>Designed by <span className="text-white">Konika Khan</span></p>
                     </div>
                     <div className="text-black  pb-4  text-center text-xl space-x-2 md:w-2/4 md:pb-0 md:pl-2 md:space-x-1 lg:pl-[171px] lg:space-x-2 xl:pl-44">
-                        <a href="#" className="w-8   h-8 bg-white inline-block rounded-full pt-[3px] ">
+                        <a href="#" className="w-8   h-8 bg-[#bef264] inline-block rounded-full pt-[3px] ">
                             <BiLogoLinkedin></BiLogoLinkedin></a> 
-                        <a href="#" className="w-8 h-8 bg-white inline-block rounded-full pt-[3px] ">
+                        <a href="#" className="w-8 h-8 bg-[#bef264] inline-block rounded-full pt-[3px] ">
                            <BiLogoFacebook></BiLogoFacebook></a> 
-                            <a href="#" className="w-8 h-8 bg-white inline-block rounded-full pt-[3px] ">
+                            <a href="#" className="w-8 h-8 bg-[#bef264] inline-block rounded-full pt-[3px] ">
                               <BiLogoTwitter></BiLogoTwitter>
                                 </a> 
-                                <a href="#" className="w-8 h-8 bg-white inline-block rounded-full pt-[3px] ">
+                                <a href="#" className="w-8 h-8 bg-[#bef264] inline-block rounded-full pt-[3px] ">
                                     <BiLogoInstagram></BiLogoInstagram></a> 
-                            <a href="#" className="w-8 h-8 bg-white inline-block rounded-full pt-[3px] ">
+                            <a href="#" className="w-8 h-8 bg-[#bef264] inline-block rounded-full pt-[3px] ">
                               <BiLogoGmail></BiLogoGmail>
                                 </a>
                          </div>

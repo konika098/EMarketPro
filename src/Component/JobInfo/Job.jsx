@@ -15,8 +15,9 @@ const Job = () => {
     const BEmail =form.BEmail.value;
     const Deadline =form.Deadline.value;
     const Price =form.Price.value;
+    const Title =form.Title.value;
 
-  const newBid ={Email,BEmail,Deadline,Price}
+  const newBid ={Email,BEmail,Deadline,Price,Title}
 
 
     fetch("http://localhost:5000/PBid", {
@@ -56,7 +57,7 @@ const Job = () => {
           <div className="flex w-3/4 flex-col gap-6">
             <div className="border-2 border-[#244034] px-7 py-10 rounded w-1/2 mx-auto">
               <div className="flex gap-2">
-                <h1 className="bg-[#244034] text-white rounded-full p-3 w-9 h-9 flex items-center font-semibold text-lg">1</h1>
+                <h1 className="bg-[#bef264] text-black rounded-full p-3 w-9 h-9 flex items-center font-semibold text-lg">1</h1>
                 <h1 className="text-2xl font-bold">Overview</h1>
               </div>
               <p className="text-lg font-semibold mt-5">When team members told us they needed more flexibility around where and how they worked, we acted, creating two options to accommodate two different styles of work. One non-negotiable principle along the way? We had to retain our deep culture of collaboration, both among ourselves and with our clients. Introducing Work From Near and Work From Anywhere at WillowTree. Learn more here. Please indicate which location(s) you're interested.</p>
@@ -64,7 +65,7 @@ const Job = () => {
 
             <div className="border-2 border-[#244034] px-7 py-10 rounded w-1/2 mx-auto">
               <div className="flex gap-2">
-                <h1 className="bg-[#244034] text-white rounded-full p-3 w-9 h-9 flex items-center font-semibold text-lg">2</h1>
+                <h1 className="bg-[#bef264] text-black  rounded-full p-3 w-9 h-9 flex items-center font-semibold text-lg">2</h1>
                 <h1 className="text-2xl font-bold">Job Description</h1>
               </div>
               <p className="text-lg font-semibold mt-5">As a {ShowData.JobCategory} at WillowTree, you’ll give form to ideas by being the voice and owner of product decisions. You’ll drive the design direction, and then make it happen!
@@ -73,7 +74,7 @@ const Job = () => {
             </div>
             <div className="border-2 border-[#244034] px-7 py-10 rounded w-1/2 mx-auto">
               <div className="flex gap-2">
-                <h1 className="bg-[#244034] text-white rounded-full p-3 w-9 h-9 flex items-center  font-semibold text-lg">3</h1>
+                <h1 className="bg-[#bef264] text-black  rounded-full p-3 w-9 h-9 flex items-center  font-semibold text-lg">3</h1>
                 <h1 className="text-2xl font-bold">Responsibilities</h1>
               </div>
               <ul >
@@ -89,7 +90,7 @@ const Job = () => {
             </div>
             <div className="border-2 border-[#244034] px-7 py-10 rounded w-1/2 mx-auto">
               <div className="flex gap-2">
-                <h1 className="bg-[#244034] text-white rounded-full p-3 w-9 h-9 flex items-center  font-semibold text-lg">4</h1>
+                <h1 className="bg-[#bef264] text-black  rounded-full p-3 w-9 h-9 flex items-center  font-semibold text-lg">4</h1>
                 <h1 className="text-2xl font-bold">Required Skills:</h1>
               </div>
               <ul >
@@ -104,7 +105,7 @@ const Job = () => {
             </div>
             <div className="border-2 border-[#244034] px-7 py-10 rounded w-1/2 mx-auto">
               <div className="flex gap-2">
-                <h1 className="bg-[#244034] text-white rounded-full p-3 w-9 h-9 flex items-center  font-semibold text-lg">5</h1>
+                <h1 className="bg-[#bef264] text-black  rounded-full p-3 w-9 h-9 flex items-center  font-semibold text-lg">5</h1>
                 <h1 className="text-2xl font-bold">Benefits:</h1>
               </div>
               <ul >
@@ -136,7 +137,7 @@ const Job = () => {
 
 
 
-            <div className="bg-[#244034] text-white p-5">
+            <div className="bg-[#244034] text-white  p-5">
               <h1 className="text-xl font-semibold mb-4">Place Your Bid Here</h1>
               <form onSubmit={handlePlaceBid}>
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
@@ -147,6 +148,11 @@ const Job = () => {
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
                   <label htmlFor="email">Buyer E-mail</label>
                   <input type="text" className="px-3 py-2 text-black" name="BEmail" placeholder="E-mail" />
+
+                </div>
+                <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
+                  <label htmlFor="email">Job Title</label>
+                  <input type="text" className="px-3 py-2 text-black" name="Title" placeholder="Title" defaultValue={ShowData.Title} />
 
                 </div>
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">

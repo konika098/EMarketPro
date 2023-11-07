@@ -23,7 +23,7 @@ const Banner = () => {
    
      <div className="flex mt-10 space-x-5">
        <button className="bg-none border-[#a3e635] border-[2px] text-white px-6 py-2 hover:brightness-105 font-semibold">Looking for Job?</button>
-      <Link > <button className="btn-one bg-[#bef264] text-black  px-6 py-2 hover:brightness-105 font-semibold">Post a Job
+      <Link to="/addjob" > <button className="btn-one bg-[#bef264] text-black  px-6 py-2 hover:brightness-105 font-semibold">Post a Job
          </button></Link>
      </div>
   </div>

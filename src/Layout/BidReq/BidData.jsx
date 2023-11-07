@@ -2,26 +2,30 @@ import { useEffect } from "react";
 import BidReq from "./BidReq";
 
 
-const BidData = () => {
-    const [Bid ,setBid]=useState([])
-    const FetchBid=()=>{
-        fetch("http://localhost:5000/PBid")
-        .then(res=>{
-            return res.json()
-        })
-        .then(Bid =>{
-            setBid(Bid)
-        })
-    }
-    useEffect(()=>{
-        FetchBid()
-    },[])
+const BidData = ({BidReqData}) => {
+    const {BEmail,Deadline,Price,Title}= BidReqData
+   
     return (
        <>
-       {
-        Bid.map(BidData=><BidReq key={BidData.id} BidData={BidData}></BidReq>)
-        
-       }
+        <div className="overflow-x-auto ">
+      <table className="table">
+       <tbody>
+      {/* row 1 */}
+      <tr className="hover">
+        <th>1</th>
+        <td>{BEmail}</td>
+        <td>{Title}</td>
+        <td>{Deadline}</td>
+        <td>{Price}</td>
+        <td>Pending</td>
+        <button className="btn mr-3">Accept</button>
+        <button className="btn">Reject</button>
+      </tr>
+      
+    </tbody>
+     </table>
+     </div>
+    
 
        </>
     );

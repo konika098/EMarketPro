@@ -5,6 +5,7 @@ import Rating from "../../Component/Rating/Rating";
 import Tablayout from "../../Component/Tab/Tablayout";
 
 import Team from "../../Component/Team/Team";
+import TopBrand from "../../Component/TopBrand/TopBrand";
 
 
 
@@ -16,8 +17,11 @@ const Home = () => {
  
 
  <HowItWorks/>
+ <TopBrand/>
  <Team/>
- <Rating/>
+ 
+
+ 
 
       
       </>

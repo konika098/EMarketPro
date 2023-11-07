@@ -19,8 +19,7 @@ const AllPost = ({ datas ,handleDetele }) => {
           </div>
           <div className="flex justify-between mt-7">
           <button className="btn-one ml-4 bg-[#bef264] text-black  px-6 py-2 hover:brightness-105 font-semibold" >
-            Update
-            </button>
+            Update</button>
           <button onClick={() => handleDetele(datas._id)} className="btn-one  mr-4 bg-[#bef264] text-black  px-6 py-2 hover:brightness-105 font-semibold" >Delete</button>
 
 
