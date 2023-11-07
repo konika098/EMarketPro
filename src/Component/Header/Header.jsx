@@ -57,8 +57,8 @@ const Header = () => {
         <div className="mt-3 navbar-end gap-4 flex ">
         {
           user? "":<>
-          <Link to="/register" className="btn  bg-[#bef264] py-2 rounded-lg px-2 md:px-5">Register</Link>
-          <Link to="/login" className="btn bg-[#bef264] py-2 rounded-lg px-2 md:px-5" >Login</Link>
+          <Link to="/register" className="btn-one bg-[#bef264] py-2 rounded-lg px-2 md:px-5">Register</Link>
+          <Link to="/login" className="btn-one bg-[#bef264] py-2 rounded-lg px-2 md:px-5" >Login</Link>
           
           </>
         }
@@ -67,7 +67,7 @@ const Header = () => {
             user?<img className="rounded-full w-9 md:w-16" src={user.photoURL} alt="" />:""
           }
           {
-            user?<button onClick={handleLogOut}className="btn bg-[#bef264] py-2 rounded-lg px-2 md:px-5" >Sign Out</button>
+            user?<button onClick={handleLogOut}className="btn-one bg-[#bef264] py-2 rounded-lg px-2 md:px-5" >Sign Out</button>
           :" "
           }
 
