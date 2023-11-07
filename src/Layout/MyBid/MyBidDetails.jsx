@@ -1,6 +1,6 @@
 
-const MyBidDetails = ({Bid}) => {
-  const {BEmail,Deadline,Price,Title}=Bid
+const MyBidDetails = ({Bids}) => {
+  const {BEmail,Deadline,Price,Title}=Bids
     return (
      <div className="overflow-x-auto ">
       <table className="table">

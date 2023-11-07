@@ -66,14 +66,14 @@ const AuthProvider = ({children}) => {
             setLoading(false);
             if(userInfo){
                 
-                axios.post('http://localhost:5173/jwt',loggedUser,
+                axios.post('http://localhost:5000/jwt',loggedUser,
                 { withCredentials:true})
                 .then(res=>{
                     console.log('token',res.data)
                 })
             }
             else{
-                axios.post('http://localhost:5173/logout',loggedUser,{
+                axios.post('http://localhost:5000/logout',loggedUser,{
                     withCredentials:true
                 })
                 .then(res=>{
