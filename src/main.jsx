@@ -39,18 +39,18 @@ const router = createBrowserRouter([
       {
         path:"/mypost",
         element:<PrivateRoute><MyPost/></PrivateRoute>,
-        loader:()=>fetch(`http://localhost:5000/PostJob`)
+        loader:()=>fetch(`https://assignment-11-server-side-black.vercel.app/PostJob`)
       },
       {
         path:'/mybid',
         element:<PrivateRoute><MyBid/></PrivateRoute>,
-        // loader:()=>fetch('http://localhost:5000/PBid')
+        // loader:()=>fetch('https://assignment-11-server-side-black.vercel.app/PBid')
         
       },
       {
         path:'/bidreq',
         element:<PrivateRoute><BidReq/></PrivateRoute>,
-        loader:()=>fetch('http://localhost:5000/PBid')
+        // loader:()=>fetch('https://assignment-11-server-side-black.vercel.app/PBid')
       },
       
       {
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
      {
       path:'/job/:id',
       element:<Job/>,
-      loader:({params})=>fetch(`http://localhost:5000/PostJob/${params.id}`)
+      loader:({params})=>fetch(`https://assignment-11-server-side-black.vercel.app/PostJob/${params.id}`)
      },
      {
       path:"/about",

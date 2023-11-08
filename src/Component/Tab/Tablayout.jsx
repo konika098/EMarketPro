@@ -9,7 +9,7 @@ const Tablayout = () => {
   const [data, setData] = useState([])
 
   const fetchUserData = () => {
-    fetch("http://localhost:5000/PostJob")
+    fetch("https://assignment-11-server-side-black.vercel.app/PostJob")
       .then(response => {
         return response.json()
       })

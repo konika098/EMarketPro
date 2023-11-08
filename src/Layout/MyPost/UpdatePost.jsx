@@ -38,7 +38,7 @@ const UpdatePost=({post})=> {
         console.log(updateData)
 
         fetch(
-            `http://localhost:5000/update/${_id}`,
+            `https://assignment-11-server-side-black.vercel.app/update/${_id}`,
             {
                 method: "PUT",
                 headers: { "content-type": "application/json" },

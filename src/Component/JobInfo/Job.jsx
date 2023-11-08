@@ -24,7 +24,7 @@ const Job = () => {
   const newBid ={Email,BEmail,Deadline,Price,Title}
 
 
-    fetch("http://localhost:5000/PBid", {
+    fetch("https://assignment-11-server-side-black.vercel.app/PBid", {
             credentials:true,
             method: 'POST',
             headers: {

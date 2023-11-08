@@ -1,105 +1,106 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import {  GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from "../../../firebase.config";
 import axios from "axios";
 
 
 
 
-export const AuthContext =createContext(null)
+export const AuthContext = createContext(null)
 const google = new GoogleAuthProvider()
 
-const AuthProvider = ({children}) => {
-    const [user,setUser]=useState(null)
-    const [loader,setLoader]=useState(false)
-    const [loading, setLoading] = useState(true);
-   
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(false);
 
 
-    const createUser =(email,password)=>{
-       setLoader(true);
-       setLoading(true);
-        return createUserWithEmailAndPassword(auth,email,password)
+
+    const createUser = (email, password) => {
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
 
-    const updateUserDetails = (user, name, photo) => {
+    const updateUserDetails = ( name, photo) => {
         setLoading(true);
-        updateProfile(user, {
-          displayName: name,
-          photoURL: photo,
-        })
-          .then(() => {
-            setUser();
-          })
-          .catch((err) => {
-            console.log(err.message);
+     return (  updateProfile(auth, {
+            displayName: name,
+            photoURL: photo,
+        }))
+           
+    };
+
+
+
+    // const loginUser = (email, password) => {
+    //     setLoading(true);
+    //     return signInWithEmailAndPassword(auth, email, password)
+    // }
+    const loginUser = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password)
+          .catch(error => {
+      
+            console. Error("Error signing in:", error);
           });
-      };
-   
-    
-  
-    const loginUser =(email,password)=>{
-        setLoader(true);
-        setLoading(true);
-        return signInWithEmailAndPassword(auth,email,password)
-    }
-    const logOut =()=>{
-        setLoader(true);
+      }
+    const logOut = () => {
         setLoading(true);
         return signOut(auth)
     }
-    const loginGoogle =()=>{
-        setLoader(true);
+    const loginGoogle = () => {
         setLoading(true);
-        return signInWithPopup(auth,google)
+        return signInWithPopup(auth, google)
     }
-    
-    
-    useEffect(()=>{
-        const unsub =onAuthStateChanged(auth , (userInfo)=>{
-            const userEmail =userInfo?.email || user.email
-            setUser(userInfo)
-            const loggedUser ={email:userEmail};
-          
+
+
+    useEffect(() => {
+        const unsub = onAuthStateChanged(auth, (userInfo) => {
+            console.log(auth,userInfo)
+            const userEmail = userInfo?.email || user?.email
             setLoading(false);
-            if(userInfo){
-                
-                axios.post('http://localhost:5000/jwt',loggedUser,
-                { withCredentials:true})
-                .then(res=>{
-                    console.log('token',res.data)
-                })
+            setUser(userInfo)
+            console.log(userInfo,loading)
+            const loggedUser = { email: userEmail };
+
+           
+            if (userInfo) {
+
+                axios.post('https://assignment-11-server-side-black.vercel.app/jwt', loggedUser,
+                    { withCredentials: true })
+                    .then(res => {
+                        console.log('token', res.data)
+                    })
             }
-            else{
-                axios.post('http://localhost:5000/logout',loggedUser,{
-                    withCredentials:true
+            else {
+                axios.post('https://assignment-11-server-side-black.vercel.app/logout', loggedUser, {
+                    withCredentials: true
                 })
-                .then(res=>{
-                    console.log(res.data)
-                })
+                    .then(res => {
+                        console.log(res.data)
+                    })
             }
         })
-        return ()=>{
+        return () => {
             unsub();
         }
-    },[])
+    }, [])
 
 
 
-    const AuthInfo ={user,createUser,loginUser,logOut,loginGoogle,loader,loading,updateUserDetails}
+    const AuthInfo = { user,name:"k", createUser, loginUser, logOut, loginGoogle,  loading, updateUserDetails }
     return (
         <>
-         <AuthContext.Provider value={AuthInfo}>
-            {children}
-        </AuthContext.Provider >
+            <AuthContext.Provider value={AuthInfo}>
+                {children}
+            </AuthContext.Provider >
         </>
     );
 };
- 
+
 
 export default AuthProvider;
-AuthProvider.propTypes ={
+AuthProvider.propTypes = {
     children: PropTypes.node
 }

@@ -23,7 +23,7 @@ const AddJobs = () => {
         console.log(newJob)
 
 
-        fetch("http://localhost:5000/PostJob", {
+        fetch(`https://assignment-11-server-side-black.vercel.app/PostJob`, {
             credentials:'include',
             method: 'POST',
             headers: {
@@ -61,7 +61,7 @@ const AddJobs = () => {
                         <div className="lg:flex items-center text-[#244034]  gap-3 ">
                             <div className="flex flex-col gap-2 lg:w-[420px]  mb-5">
                                 <label htmlFor="email">E-mail</label>
-                                <input type="text" className="px-3 py-2 text-black" name="Email" placeholder="E-mail" />
+                                <input type="text" className="px-3 py-2 text-black" name="Email" placeholder="E-mail" value={jobOwnerEmail} />
 
                             </div>
 

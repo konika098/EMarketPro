@@ -2,7 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../ProviderFile/AuthProvider";
 import { useContext } from "react";
 const Header = () => {
-  const {user,logOut} =useContext(AuthContext)
+  const {user,name,logOut} =useContext(AuthContext)
+  console.log(name)
     const handleToggle = (e) => {
         if (e.target.checked) {
             setTheme("dark");
@@ -67,7 +68,9 @@ const Header = () => {
             user?<img className="rounded-full w-9 md:w-16" src={user.photoURL} alt="" />:""
           }
           {
-            user?<button onClick={handleLogOut}className="btn-one bg-[#bef264] py-2 rounded-lg px-2 md:px-5" >Sign Out</button>
+            user?<>
+            <button onClick={handleLogOut}className="btn-one bg-[#bef264] py-2 rounded-lg px-2 md:px-5" >Sign Out</button>
+            </>
           :" "
           }
 

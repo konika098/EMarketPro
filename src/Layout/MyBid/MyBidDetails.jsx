@@ -2,10 +2,7 @@
 const MyBidDetails = ({Bids}) => {
   const {BEmail,Deadline,Price,Title}=Bids
     return (
-     <div className="overflow-x-auto ">
-      <table className="table">
-       <tbody>
-      {/* row 1 */}
+    <>
       <tr className="hover">
         <th>1</th>
         <td>{BEmail}</td>
@@ -15,10 +12,13 @@ const MyBidDetails = ({Bids}) => {
         <td>Pending</td>
         <button className="btn">complete</button>
       </tr>
+    </> 
       
-    </tbody>
-     </table>
-     </div>
+ 
+    
+      
+  
+    
     );
 };
 

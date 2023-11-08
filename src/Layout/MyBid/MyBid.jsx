@@ -10,7 +10,7 @@ const MyBid = () => {
     // console.log(MyBidData)
     const [MyBid,setMyBid]=useState([])
     useEffect(() => {
-      fetch("http://localhost:5000/PBid",{
+      fetch("https://assignment-11-server-side-black.vercel.app/PBid",{
         credentials:'include'
       })
       .then(response => {
@@ -42,13 +42,16 @@ const MyBid = () => {
               <th></th>
             </tr>
           </thead>
+          <tbody>
+          {
+        MyBid.map(Bid=><MyBidDetails key={Bid.id} Bids={Bid}></MyBidDetails>)
+      }
+          </tbody>
           
         </table>
       </div>
         </div>
-        {
-        MyBidData.map(Bid=><MyBidDetails key={Bid.id} Bids={Bid}></MyBidDetails>)
-      }
+     
        
        </>
     );

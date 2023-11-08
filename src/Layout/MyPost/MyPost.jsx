@@ -1,14 +1,33 @@
 import { useLoaderData } from "react-router-dom";
 import AllPost from "./AllPost";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Component/ProviderFile/AuthProvider";
 
 
 const MyPost = () => {
-  const allData =useLoaderData()
+  // const allData =useLoaderData()
   // console.log(allData)
+  const {user}=useContext(AuthContext)
 
-  const [Post,setPost] = useState(allData)
+  
+  const [allData,setAllData]=useState([]);
+  console.log(allData.ApplicantEmail)
+  const [Post,setPost] = useState(allData);
+  useEffect(() => {
+    fetch(`https://assignment-11-server-side-black.vercel.app/Post`,{
+      
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      setAllData(data)
+      console.log(data)
+    })
+  
+   
+  },[]);
    
 
     const handleDetele = id => {
@@ -24,7 +43,7 @@ const MyPost = () => {
       }).then((result) => {
         if (result.isConfirmed) {
   
-          fetch(`http://localhost:5000/delete/${id}`, {
+          fetch(`https://assignment-11-server-side-black.vercel.app/delete/${id}`, {
             method: 'DELETE'
           })
             .then(res => res.json())

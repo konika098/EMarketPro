@@ -22,6 +22,7 @@ const Register = () => {
     e.preventDefault()
     const email = e.target.email.value
     const password = e.target.password.value
+    const photo = e.target.photo.value
     
 
 
@@ -41,7 +42,7 @@ const Register = () => {
     createUser(email, password)
       .then(result => {
         console.log(result)
-        updateUserDetails(result.user, email)
+        updateUserDetails("",photo)
         e.target.reset()
         // resgisterNav("/")
         Swal.fire({
