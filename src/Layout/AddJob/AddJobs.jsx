@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Component/ProviderFile/AuthProvider";
 
 
 const AddJobs = () => {
+    const {user}=useContext(AuthContext)
+    const jobOwnerEmail =user.email
     const handleAddJob = event => {
         event.preventDefault()
         const form = event.target;
 
-        const Email = form.Email.value;
+        const ApplicantEmail = form.Email.value;
         const JobCategory = form.JobCategory.value;
         const Deadline = form.Deadline.value;
         const MaximumPrice = form.MaximumPrice.value;
@@ -15,16 +19,18 @@ const AddJobs = () => {
 
         const Title = form.Title.value;
 
-        const newFood = { Email, JobCategory, MaximumPrice, MinimumPrice, Description, Title, Deadline }
-        console.log(newFood)
+        const newJob = { jobOwnerEmail,ApplicantEmail, JobCategory, MaximumPrice, MinimumPrice, Description, Title, Deadline }
+        console.log(newJob)
 
 
         fetch("http://localhost:5000/PostJob", {
+            credentials:'include',
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newFood)
+            body: JSON.stringify(newJob)
+           
         })
             .then(res => res.json())
             .then(data => {

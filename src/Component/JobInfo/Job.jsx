@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../ProviderFile/AuthProvider";
 // import JobDetails from '../JobInfo/JobDetails'
 
 
 
 const Job = () => {
   const ShowData = useLoaderData()
+  const {user} =useContext(AuthContext)
+  const BEmail =user.email
   console.log(ShowData)
 
   const handlePlaceBid =e =>{
@@ -21,6 +25,7 @@ const Job = () => {
 
 
     fetch("http://localhost:5000/PBid", {
+            credentials:true,
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -142,7 +147,7 @@ const Job = () => {
               <form onSubmit={handlePlaceBid}>
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
                   <label htmlFor="email">E-mail</label>
-                  <input type="text" className="px-3 py-2 text-black" name="Email" placeholder="E-mail" />
+                  <input type="text" className="px-3 py-2 text-black" name="Email" placeholder="E-mail" value={ShowData.Email} />
 
                 </div>
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
