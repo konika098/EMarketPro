@@ -7,9 +7,10 @@ import { AuthContext } from "../ProviderFile/AuthProvider";
 
 
 const Job = () => {
+
   const ShowData = useLoaderData()
   const {user} =useContext(AuthContext)
-  const BEmail =user.email
+  const ownerEmail =user.email
   console.log(ShowData)
 
   const handlePlaceBid =e =>{
@@ -24,8 +25,8 @@ const Job = () => {
   const newBid ={Email,BEmail,Deadline,Price,Title}
 
 
-    fetch("https://assignment-11-server-side-black.vercel.app/PBid", {
-            credentials:true,
+    fetch("https://assignment-11-server-side-black.vercel.app/AddPBid", {
+            // credentials:"include",
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -147,7 +148,7 @@ const Job = () => {
               <form onSubmit={handlePlaceBid}>
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
                   <label htmlFor="email">E-mail</label>
-                  <input type="text" className="px-3 py-2 text-black" name="Email" placeholder="E-mail" value={ShowData.Email} />
+                  <input type="text" className="px-3 py-2 text-black" name="Email" placeholder="E-mail" value={ownerEmail} />
 
                 </div>
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
@@ -163,6 +164,11 @@ const Job = () => {
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
                   <label htmlFor="email">Price</label>
                   <input type="text" className="px-3 py-2 text-black" name="Price" placeholder="Price" />
+
+                </div>
+                <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
+                  <label htmlFor="email">Status</label>
+                  <input type="text" value={"Pending"} className="px-3 py-2 text-black" name="Price" placeholder="Price" />
 
                 </div>
                 <div className="flex text-[#244034] flex-col gap-2 mb-5 lg:w-[300px]">

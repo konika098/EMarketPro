@@ -2,8 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../ProviderFile/AuthProvider";
 import { useContext } from "react";
 const Header = () => {
-  const {user,name,logOut} =useContext(AuthContext)
-  console.log(name)
+  const {user,logOut} =useContext(AuthContext)
+  // console.log(name)
     const handleToggle = (e) => {
         if (e.target.checked) {
             setTheme("dark");

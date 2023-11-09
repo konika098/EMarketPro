@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import UpdatePost from "./UpdatePost";
+import { AuthContext } from "../../Component/ProviderFile/AuthProvider";
+import { Link } from "react-router-dom";
 const AllPost = ({ datas ,handleDetele }) => {
-    const { Title, Deadline, Description, JobCategory,MinimumPrice,MaximumPrice} = datas
+    const {_id, Title, Deadline, Description, JobCategory,MinimumPrice,MaximumPrice} = datas
     return (
         <>
    <div className=" p-4  max-w-7xl  w-full h-auto  ">
@@ -18,8 +21,8 @@ const AllPost = ({ datas ,handleDetele }) => {
         </div>
           </div>
           <div className="flex justify-between mt-7">
-          <button className="btn-one ml-4 bg-[#bef264] text-black  px-6 py-2 hover:brightness-105 font-semibold" >
-            Update</button>
+        <Link to={`/updatePost/${_id}`}>  <button className="btn-one ml-4 bg-[#bef264] text-black  px-6 py-2 hover:brightness-105 font-semibold" >
+            Update </button></Link>
           <button onClick={() => handleDetele(datas._id)} className="btn-one  mr-4 bg-[#bef264] text-black  px-6 py-2 hover:brightness-105 font-semibold" >Delete</button>
 
 
@@ -28,7 +31,7 @@ const AllPost = ({ datas ,handleDetele }) => {
         </div>
        
       </div>
-      <UpdatePost post={datas}/>
+    
             
         </>
     );

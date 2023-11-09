@@ -23,7 +23,7 @@ const AddJobs = () => {
         console.log(newJob)
 
 
-        fetch(`https://assignment-11-server-side-black.vercel.app/PostJob`, {
+        fetch(`https://assignment-11-server-side-black.vercel.app/NewPostJob`, {
             credentials:'include',
             method: 'POST',
             headers: {

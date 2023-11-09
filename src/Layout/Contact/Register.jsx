@@ -111,15 +111,15 @@ const Register = () => {
             </div>
           </div>
           <div className="text-center mt-7 flex flex-col gap-3">
-            <button className="uppercase px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-[#244034] to-violet-600  font-medium ">login</button>
-            <button onClick={handleGoogle} className="uppercase px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-[#244034] to-violet-600 flex items-center gap-4 font-medium "> login with google</button>
+            <button className="uppercase px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-[#244034]   font-medium ">Register</button>
+            <button onClick={handleGoogle} className="uppercase px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-[#244034]  flex items-center gap-4 font-medium "> Register with google</button>
 
 
           </div>
           </form>
           <div className="text-center my-6 flex flex-col">
             {
-              error && <p className="mx-8 text-white bg-purple-700 p-3">{error}</p>
+              error && <p className="mx-8 text-white bg-white p-3">{error}</p>
             }
             {
               successfullyLogin && <p className="mx-8 text-green-600">{successfullyLogin}</p>

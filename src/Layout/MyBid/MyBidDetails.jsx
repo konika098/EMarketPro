@@ -1,6 +1,6 @@
 
 const MyBidDetails = ({Bids}) => {
-  const {BEmail,Deadline,Price,Title}=Bids
+  const {BEmail,Deadline,Price,Title,Status}=Bids
     return (
     <>
       <tr className="hover">
@@ -9,7 +9,7 @@ const MyBidDetails = ({Bids}) => {
         <td>{Title}</td>
         <td>{Deadline}</td>
         <td>{Price}</td>
-        <td>Pending</td>
+        <td>{Status}</td>
         <button className="btn">complete</button>
       </tr>
     </> 

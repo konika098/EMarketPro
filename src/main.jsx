@@ -20,6 +20,7 @@ import AuthProvider from './Component/ProviderFile/AuthProvider';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute'
 import Job from './Component/JobInfo/Job'
 import About from './Component/About/About';
+import UpdatePost from './Layout/MyPost/UpdatePost';
 
 
 const router = createBrowserRouter([
@@ -44,13 +45,11 @@ const router = createBrowserRouter([
       {
         path:'/mybid',
         element:<PrivateRoute><MyBid/></PrivateRoute>,
-        // loader:()=>fetch('https://assignment-11-server-side-black.vercel.app/PBid')
         
       },
       {
         path:'/bidreq',
         element:<PrivateRoute><BidReq/></PrivateRoute>,
-        // loader:()=>fetch('https://assignment-11-server-side-black.vercel.app/PBid')
       },
       
       {
@@ -73,6 +72,11 @@ const router = createBrowserRouter([
      {
       path:"/about",
       element:<About/>
+     },
+     {
+      path:'/updatePost/:id',
+      element:<UpdatePost/>,
+      loader:({params})=>fetch(`https://assignment-11-server-side-black.vercel.app/PostJob/${params.id}`)
      }
     ]
   },
