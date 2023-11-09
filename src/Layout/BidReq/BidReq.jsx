@@ -9,10 +9,9 @@ const BidReq = () => {
   
 
   const [Bid,setBid]= useState([])
+  const [asc ,setAsc]=useState(true)
   useEffect(() => {
-    fetch("https://assignment-11-server-side-black.vercel.app/PBid",{
-      credentials:'include'
-    })
+    fetch(`https://assignment-11-server-side-black.vercel.app/Sort?sort=${asc?"asc":"des" }`)
     .then(response => {
       return response.json()
     })
@@ -22,12 +21,13 @@ const BidReq = () => {
     })
   
    
-  },[]);
+  },[asc]);
 
 
   return (
     <>
       <div className='mt-10'>
+        <button onClick={()=>setAsc(!asc)} className="btn-one bg-[#bef264] flex justify-center mx-auto p-3">{asc? "AllPending":"AllProgress"}</button>
         <div className="overflow-x-auto ">
           <table className="table">
             {/* head */}

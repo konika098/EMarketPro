@@ -7,7 +7,7 @@ const UpdatePost = () => {
     // console.log(upData)
 
    
-    const handleUpdate = (event,id) => {
+    const handleUpdate = (event) => {
         event.preventDefault()
         const form = event.target;
 
@@ -32,9 +32,10 @@ const UpdatePost = () => {
         console.log(updateData)
 
         fetch(
-            `https://assignment-11-server-side-black.vercel.app/update/${id}`,
-            {
-                method: "PUT",
+            `https://assignment-11-server-side-black.vercel.app/update/${upData._id}`,
+            {   
+                
+                method: "PATCH",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(updateData),
             }
@@ -50,8 +51,12 @@ const UpdatePost = () => {
                         confirmButtonText: 'Cool'
                     })
                 }
+                
 
-            });
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
     };
    
    
@@ -63,7 +68,7 @@ const UpdatePost = () => {
         <>
        
              <div className='bg-[#d9f99d] flex justify-center' >
-                        <form onSubmit={()=>(handleUpdate(upData._id))}>
+                        <form onSubmit={handleUpdate}>
                             <div className="mt-4">
                                 <label className="text-black" >Job Title</label>
                                 <input defaultValue={upData.Title} name="Title" className="w-full text-black bg-base-100 rounded-md border-green-700 px-2 py-1" type="text" />

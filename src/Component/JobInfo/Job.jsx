@@ -21,8 +21,9 @@ const Job = () => {
     const Deadline =form.Deadline.value;
     const Price =form.Price.value;
     const Title =form.Title.value;
+    const Status =form.Status.value;
 
-  const newBid ={Email,BEmail,Deadline,Price,Title}
+  const newBid ={Email,BEmail,Deadline,Price,Title,Status}
 
 
     fetch("https://assignment-11-server-side-black.vercel.app/AddPBid", {
@@ -168,7 +169,7 @@ const Job = () => {
                 </div>
                 <div className="flex flex-col gap-2 lg:w-[300px]  mb-5">
                   <label htmlFor="email">Status</label>
-                  <input type="text" value={"Pending"} className="px-3 py-2 text-black" name="Price" placeholder="Price" />
+                  <input type="text" value={"Pending"} className="px-3 py-2 text-black" name="Status" placeholder="PStatus" />
 
                 </div>
                 <div className="flex text-[#244034] flex-col gap-2 mb-5 lg:w-[300px]">

@@ -66,14 +66,14 @@ const BidData = ({BidReqData}) => {
       
     
      <tr className="hover">
-        <th>1</th>
+        <th></th>
         <td>{BEmail}</td>
         <td>{Title}</td>
         <td>{Deadline}</td>
         <td>{Price}</td>
         <td>{Status}</td>
-        <button onClick={()=>handleProgressStatus(_id)} className="btn-one mr-3">Accept</button>
-        <button onClick={()=>handleReject(_id)} className="btn-one">Reject</button>
+        <button disabled={Status=="cancel" || Status=="complete"?true:false} onClick={()=>handleProgressStatus(_id)} className="btn-one bg-[#bef264] p-1 mt-2  mr-3">Accept</button>
+        <button disabled={Status=="progress" || Status=="complete"?true:false} onClick={()=>handleReject(_id)} className="btn-one bg-[#bef264] p-1 mt-2 ">Reject</button>
       </tr>
     
 

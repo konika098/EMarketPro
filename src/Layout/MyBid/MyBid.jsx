@@ -5,14 +5,14 @@ import { useState } from 'react';
 // import useBid from '../../Component/Hook/useBid';
 
 const MyBid = () => {
+    const [asc ,setAsc]=useState(true)
     // const MyBid =useLoaderData()
     // const MyBidData =useBid()
     // console.log(MyBidData)
     const [MyBid,setMyBid]=useState([])
     useEffect(() => {
-      fetch("https://assignment-11-server-side-black.vercel.app/PBid",{
-        credentials:'include'
-      })
+      fetch(`https://assignment-11-server-side-black.vercel.app/MySort?sort=${asc?"asc":"des" }`
+     )
       .then(response => {
         return response.json()
       })
@@ -22,12 +22,14 @@ const MyBid = () => {
       })
     
      
-    },[]);
+    },[asc]);
     // console.log(MyBid)
     return (
        <>
     
         <div className='mt-10'>
+        <button onClick={()=>setAsc(!asc)} className="btn-one bg-[#bef264] flex justify-center mx-auto p-3">{asc? "AllPending":"AllProgress"}</button>
+
         <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}
@@ -39,7 +41,7 @@ const MyBid = () => {
               <th>Deadline</th>
               <th>Price</th>
               <th>Status</th>
-              <th></th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
