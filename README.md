@@ -24,7 +24,7 @@ Visit online Marketplace(E-Market Pro) at [https://assignment-11-b9679.web.app](
 
 ## How to Get Started
 
-1. Visit [https://delishop-client.web.app/](https://delishop-client.web.app/)
+1. Visit [https://assignment-11-b9679.web.app](https://assignment-11-b9679.web.app)
 2. Register for an account or log in using your email or Google account.
 
 3. Contact us with any questions or inquiries.
